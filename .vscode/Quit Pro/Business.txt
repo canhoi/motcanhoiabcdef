@@ -1,0 +1,67 @@
+1. Tab quit it
+	-Calculator number cigarettes
+				Find number cigarettes from current total hours from quit date
+				cigarettesDay = 20  -> 24h
+				numberCigarettes = ? <- currentTotalHoursFromQuitDate
+				
+	-Calculator money	
+				cigarettesPack = 10  -> moneyPack = 5
+				numberCigarettes     -> money = ?
+						
+	-Calculator number packs
+				1 packs         -> cigarettesPack = 10
+				numberPacks = ? <- numberCigarettes
+	
+2. Tab health
+	-Calculator time for display (format <= 100% "in 19 hours 29 minutes, format > 100 "for 19 hours 29 minutes)
+				distance = totalHours - currentTotalHoursFromQuitDate;
+				if(distance >= 0){
+					use format <= 100%
+				}else{
+					use format > 100
+				}
+
+3. Tab targets
+	-Create
+		+Input monney
+		+Calculator percent for display: 
+			step 1: Find number cigarettes from money input
+				cigarettesPack = 10 -> moneyPack = 5
+				numberCigarettes = ? <- moneyInput = 1
+
+			step 2: find total hours (100%) from number cigarettes
+				cigarettesDay = 20  -> 24h
+				numberCigarettes = 2 -> totalHours = ?
+
+			step 3: calculator percent
+				currentPercent = (currentTotalHoursFromQuitDate/totalHours)/100
+
+		+Calculator time for display (format <= 100% "in 19 hours 29 minutes, format > 100 "for 19 hours 29 minutes)
+				distance = totalHours - currentTotalHoursFromQuitDate;
+				if(distance >= 0){
+					use format <= 100%
+				}else{
+					use format > 100
+				}
+		+Calculator number goal achieved case > 100
+			   numberGoalAchieved =	Math.abs(distance)/totalHours;
+
+	-Notification when target to 100%:
+		Text show "Goal Achieved: name of target"
+
+4. Tab settings
+	-Toxic substances
+		+ Nicotin: 0.1 -> 3.1
+		+ Tar: 1 -> 31
+		+ Carbon Monoxide: 1 -> 31
+	-Facts and money
+	    + Cigarettes/Day: 1 -> 80
+	    + Cigarettes/Pack: 5 -> 100
+	    +   -> Money/ack = 5
+	    		   2 <- = 1			: 1 -> 200
+	-Quit date
+		+ select: minutes-hours-day-month-year
+
+
+Message 
+	set time future: you cannot set a future date, because doing so renders most of the messages useless.
