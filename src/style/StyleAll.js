@@ -1,5 +1,5 @@
 "use strict";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 export const StyleMain = StyleSheet.create({
   iconTabar: {
@@ -11,7 +11,8 @@ export const StyleMain = StyleSheet.create({
   header: {
     bottom: 0,
     right: 0,
-    height: 46,
+    height: Platform.OS !== "ios" ? 54 : 64,
+    //height: 46,
     backgroundColor: "#14203c",
     shadowColor: "black",
     shadowRadius: 0.3,

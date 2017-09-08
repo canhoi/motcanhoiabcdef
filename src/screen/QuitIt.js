@@ -14,6 +14,9 @@ export default class Map extends Component {
   constructor(props) {
     super(props);
   }
+  onGoBack() {
+    console.log("back is==============================================");
+  }
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -21,7 +24,8 @@ export default class Map extends Component {
           style={{ backgroundColor: "green" }}
           onPress={() => {
             this.props.navigation.navigate("Screen_DetailTest", {
-              thamso: "chuỗi này nhận từ home"
+              thamso: "chuỗi này nhận từ home",
+              onGoBack: this.onGoBack
             });
           }}
         >

@@ -10,9 +10,10 @@ import {
 } from "react-native";
 import locale from "../localize/Locale";
 import { StyleMain } from "../style/StyleAll";
+
 export default class Map extends Component {
   static navigationOptions = ({ navigation }) => ({
-    title: locale.t("detail_test"),
+    title: "Detail test",
     headerTintColor: "#ffffff",
     headerStyle: StyleMain.header,
     headerTitleStyle: StyleMain.headerTitleMarginRight,
@@ -21,6 +22,7 @@ export default class Map extends Component {
   constructor(props) {
     super(props);
   }
+
   componentDidMount() {
     BackHandler.addEventListener("backPress", this.backHardware);
   }
@@ -28,7 +30,7 @@ export default class Map extends Component {
     BackHandler.removeEventListener("backPress", this.backHardware);
   }
   backHardware() {
-    let canNotBack = true;
+    let canNotBack = false;
     if (canNotBack) {
       return true;
     } else {
@@ -41,6 +43,8 @@ export default class Map extends Component {
         <TouchableOpacity
           style={{ backgroundColor: "green" }}
           onPress={() => {
+            //this.props.navigation.dispatch(backAction);
+            this.props.navigation.state.params.onGoBack();
             this.props.navigation.goBack();
           }}
         >
